@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <section class="container" ng-app="myApp" ng-controller="MembersCtrl">
+      <h1>UX Society Members</h1>
+      <form class="form-inline">
+        <span class="glyphicon glyphicon-search"></span><input ng-model="query" class="searchbox" type="text" placeholder="Search" autofocus>
+      </form>
+      <div class="row">
+        <div class="col-md-8 static">
+          <div class="user-grid">
+            <div class="header-bar clearfix">
+              <div class="col-md-4">Name</div>
+              <div class="col-md-4">Occupation</div>
+              <div class="col-md-4">Company</div>
+            </div>
+            <div ng-repeat="member in members | filter: query">
+              <div class="member-row clearfix" ng-click="select(member)">
+                <div class="col-md-4">{{member.firstName}} {{member.surname}}</div>
+                <div class="col-md-4">{{member.occupation}}</div>
+                <div class="col-md-4">{{member.company}}</div>
+              </div>
+              <article class="details-holder col-md-4" ng-show="isSelected(member)">
+                <div class="member-details clearfix">
+                  <div class="header-bar clearfix">
+                    <h2 class="col-md-12">{{member.firstName}} {{member.surname}}</h2>
+                  </div>
+                  <p><img src="{{member.portrait}}" /></p>
+                  <p>{{member.occupation}}</p>
+                  <p>{{member.company}}</p>
+                  <p>{{member.motto}}</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

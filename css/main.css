@@ -1,0 +1,59 @@
+h1 {
+  margin: 50px 0;
+}
+
+.static {
+  position: static;
+}
+
+.row {
+  position: relative;
+  margin-top: 25px;
+}
+
+.searchbox {
+  padding: 5px 5px 5px 30px;
+  width: 100%;
+}
+
+.glyphicon-search {
+  margin-right: -25px;
+  margin-left: 10px;
+  color: #666;
+}
+
+.user-grid,
+.member-details {
+  border: solid 1px #c6c6c6;
+}
+
+.details-holder {
+  margin-bottom: 10px;
+}
+
+.member-details p {
+  padding: 0 10px;
+}
+
+.header-bar {
+  padding: 10px 0;
+  font-weight: bold;
+  background: #ececec;
+}
+
+.member-row {
+  padding: 5px 0;
+  border-top: solid 1px #c6c6c6;
+}
+
+.member-row:hover {
+  background: #d9eef6;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media only screen and (min-width : 992px) {
+  .details-holder {
+    position: absolute; right: 0; top: 0;
+  }
+}
